@@ -5,8 +5,8 @@ interface
 
 uses unitpersonnage, UnitMenu,GestionEcran;
 
-procedure Benediction(var perso: personnage);
 //Permet, en fin de combat, de choisir une bénédiction des Dieux nordiques.
+procedure Benediction(var perso: personnage);
 
 
 implementation

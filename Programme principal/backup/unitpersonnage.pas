@@ -5,6 +5,7 @@ unit UnitPersonnage;
 interface
   uses GestionEcran, SysUtils, TypInfo;
 
+  // TYPES
   type race = (Khajiit, HautElfe, Sombrage, Imperiaux);
 
   type personnage = Record
@@ -49,7 +50,7 @@ implementation
   var
     repUtilisateur : Integer; //Reponse saisis par l'utilisateur
     coordOrigin : coordonnees; //Coordonnées des différents texte affiché
-    listeTexte : array of String; //
+    listeTexte : array of String; //Tableau contenant les noms et descriptif de chaque race
   begin
     repeat
       redo();

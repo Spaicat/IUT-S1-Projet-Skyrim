@@ -375,7 +375,7 @@ begin
           end;
 
   until (KeyEventToString(Touche)=chr(13));
-  selectedChoice := (coordTemp.y - CoordMin.y) div distanceEntreTexte; //On fait correspondre le choix effectué en calculant
+  selectedChoice := (coordTemp.y - CoordMin.y) div distanceEntreTexte; //On fait correspondre le choix effectué en calculant par rapport à l'endroit où se trouve le curseur
   deplacerCurseur(coordMax);
   selectionMenu:=selectedChoice;
 end;

@@ -5,6 +5,7 @@ unit UnitPersonnage;
 interface
   uses GestionEcran, SysUtils, TypInfo;
 
+  // TYPES
   type race = (Khajiit, HautElfe, Sombrage, Imperiaux);
 
   type personnage = Record
@@ -16,6 +17,8 @@ interface
                   attaque,
                   defense : Integer;
                   end;
+
+  // FONCTIONS ET PROCEDURES
 
   //Fonction qui renvoie le personnage
   function getPersonnage() : Personnage;

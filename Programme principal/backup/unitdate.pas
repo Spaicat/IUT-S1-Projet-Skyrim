@@ -4,6 +4,7 @@ interface
 
   uses SysUtils;
 
+  //TYPES
   type
     jour =(Morndas,Tirdas,Middas,Turdas,Fredas,Loredas,Sundas);
     mois = (Primetoile,Clairciel,Semailles,Ondepluie,Plantaisons,Mi_lan,Hautzenith,Vifazur,Atrefeu,Soufflegivre,Sombreciel,Soiretoile);
@@ -21,6 +22,8 @@ interface
       m:mois;
       a:Integer;
     end;
+
+  // FONCTIONS ET PROCEDURES
 
   //Procédure qui initialise la date (lorsqu'on lance le jeu)
   procedure initDate();
@@ -83,6 +86,7 @@ implementation
     else moisSuivant := Succ(m)
   end;
 
+  //Fonction qui renvoie le nombre de jour dans le mois correspondant en paramètre (et l'année si bissextile)
   function nbJours(m : mois; annee : integer) : integer;
   begin
     case m of

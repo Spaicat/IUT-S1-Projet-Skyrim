@@ -4,6 +4,7 @@ interface
 
   uses SysUtils, unitPersonnage, unitCombat, unitMagasin, unitInventaire, unitDate, GestionEcran, TypInfo;
 
+  //TYPES
   type
     TTableau = array [1..8] of Boolean;       // 1 = Blancherive // 2 = Marché de Blancherive // 3 = Chateau //4 = Porte de la ville // 5 = Boutique // 6 = Menu // 7 = Auberge // 8 = Clan Drakion
 
@@ -13,6 +14,8 @@ interface
       indice:Integer;
       possibiliteLieu : TTableau;
     end;
+
+  // FONCTIONS ET PROCEDURES
 
   //Fonction qui permet de retouner les information du lieu 1
   function getLieu1() : TInformation;

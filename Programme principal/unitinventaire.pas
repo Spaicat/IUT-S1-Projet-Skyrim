@@ -3,7 +3,8 @@ unit unitInventaire;
 
 interface
   uses GestionEcran, unitPersonnage, SysUtils, TypInfo;
-  // TYPES
+
+// TYPES
 
   type categorie=(Soin,Protection,Degats);
 
@@ -22,7 +23,7 @@ interface
      possession : poss;
   end;
 
-  // FONCTIONS ET PROCEDURES
+// FONCTIONS ET PROCEDURES
 
   //Procedure qui definie les objets
   procedure initObjet(var o1,o2,o3:Objet);

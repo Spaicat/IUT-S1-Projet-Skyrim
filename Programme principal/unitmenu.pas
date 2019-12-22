@@ -3,6 +3,8 @@ unit UnitMenu;
 interface
 uses UnitPersonnage, GestionEcran, unitLieu, TypInfo, Keyboard, Classes, SysUtils, unitInventaire, unitDate;
 
+// FONCTIONS ET PROCEDURES
+
 //Procédure qui affiche le menu initial
 procedure menuInitial(var fin : Boolean);
 

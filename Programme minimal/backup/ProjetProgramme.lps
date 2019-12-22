@@ -4,14 +4,13 @@
     <PathDelim Value="\"/>
     <Version Value="11"/>
     <BuildModes Active="Default"/>
-    <Units Count="9">
+    <Units Count="10">
       <Unit0>
         <Filename Value="ProjetProgramme.pas"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
         <TopLine Value="185"/>
         <CursorPos X="32" Y="220"/>
-        <UsageCount Value="39"/>
+        <UsageCount Value="41"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -21,7 +20,7 @@
         <EditorIndex Value="2"/>
         <TopLine Value="44"/>
         <CursorPos X="62" Y="76"/>
-        <UsageCount Value="39"/>
+        <UsageCount Value="41"/>
         <Loaded Value="True"/>
       </Unit1>
       <Unit2>
@@ -30,17 +29,18 @@
         <UnitName Value="UnitPersonnage"/>
         <EditorIndex Value="3"/>
         <CursorPos X="12" Y="18"/>
-        <UsageCount Value="38"/>
+        <UsageCount Value="40"/>
         <Loaded Value="True"/>
       </Unit2>
       <Unit3>
         <Filename Value="unitmagasin.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="unitMagasin"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <TopLine Value="36"/>
         <CursorPos X="50" Y="72"/>
-        <UsageCount Value="38"/>
+        <UsageCount Value="40"/>
         <Loaded Value="True"/>
       </Unit3>
       <Unit4>
@@ -49,14 +49,14 @@
         <UnitName Value="unitCombat"/>
         <EditorIndex Value="6"/>
         <CursorPos X="48" Y="17"/>
-        <UsageCount Value="38"/>
+        <UsageCount Value="40"/>
         <Loaded Value="True"/>
       </Unit4>
       <Unit5>
         <Filename Value="GestionEcran.pas"/>
         <EditorIndex Value="5"/>
         <CursorPos X="48" Y="53"/>
-        <UsageCount Value="21"/>
+        <UsageCount Value="22"/>
         <Loaded Value="True"/>
       </Unit5>
       <Unit6>
@@ -65,14 +65,14 @@
         <EditorIndex Value="7"/>
         <TopLine Value="170"/>
         <CursorPos X="28" Y="79"/>
-        <UsageCount Value="19"/>
+        <UsageCount Value="20"/>
         <Loaded Value="True"/>
       </Unit6>
       <Unit7>
         <Filename Value="unitLieu.pas"/>
         <EditorIndex Value="4"/>
         <CursorPos X="37" Y="26"/>
-        <UsageCount Value="18"/>
+        <UsageCount Value="19"/>
         <Loaded Value="True"/>
       </Unit7>
       <Unit8>
@@ -82,6 +82,11 @@
         <TopLine Value="146"/>
         <UsageCount Value="12"/>
       </Unit8>
+      <Unit9>
+        <Filename Value="..\Programme principal\ProjetProgramme.pas"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="11"/>
+      </Unit9>
     </Units>
     <JumpHistory Count="29" HistoryIndex="28">
       <Position1>

@@ -130,7 +130,7 @@ implementation
        writelnPerso(' >  Partir');
        option := selectionMenu(posXY(positionCurseur().x, positionCurseur().y-3), 4, 1, 2, LightBlue, White) + 1;
        case option of
-         1 :
+         1 : //Epee
            begin
            if inventairePerso.possession[1] > 0 then
            begin
@@ -166,7 +166,7 @@ implementation
              readlnPerso();
              end;
            end;
-         2 :
+         2 : //Bouclier
            begin
            if inventairePerso.possession[2] > 0 then
              begin
@@ -195,7 +195,6 @@ implementation
                indicateur := indicateur + 1;
                nomEquipement := 'Bouclier';
                end;
-
              end
             else
                begin
@@ -203,7 +202,7 @@ implementation
                readlnPerso();
                end;
            end;
-         3 :
+         3 : //Potion
            begin
            if inventairePerso.possession[3] > 0 then
              begin
@@ -221,7 +220,7 @@ implementation
              readlnPerso();
              end;
            end;
-         4 : sortie := True;
+         4 : sortie := True; //Partir
        end;
      end;
    end;

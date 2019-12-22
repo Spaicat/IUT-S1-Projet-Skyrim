@@ -14,7 +14,7 @@ var
   coorTexte : Coordonnees; //Coordonnées du texte Se Reposer
   coorTexte2 : Coordonnees; //Coordonnées du texte Partir
   temp : Integer; //Choix de l'utilsateur (Se reposer ou partir)
-  d:dateCourante; //Date actuel
+  d:dateCourante; //Date actuelle
 
 begin
   coorTexte := positionCurseur();

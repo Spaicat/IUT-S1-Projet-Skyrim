@@ -4,16 +4,22 @@ unit unitMagasin;
 
 interface
 
-uses unitInventaire, unitPersonnage;
+  uses unitInventaire, unitPersonnage;
 
-procedure initMagasin(var listePerso,listeMagasin:Inventaire);
-procedure achat(var p:Personnage; var listePer,listeMagasin:Inventaire);
-procedure vente(var p:Personnage; var listePer,listeMagasin:Inventaire);
+  //Procédure qui initialise le Magasin
+  procedure initMagasin(var listePerso,listeMagasin:Inventaire);
+
+  //Procédure qui lance les achats dans le magasin
+  procedure achat(var p:Personnage; var listePer,listeMagasin:Inventaire);
+
+  //Procédure qui lance les ventes dans le magasin
+  procedure vente(var p:Personnage; var listePer,listeMagasin:Inventaire);
 
 
 
 
 implementation
+  //Procédure qui initialise le Magasin
    procedure initMagasin(var listePerso,listeMagasin:Inventaire);
    var
      i:Integer;
@@ -26,7 +32,7 @@ implementation
    end;
 
 
-
+   //Procédure qui lance les achats dans le magasin
    procedure achat(var p:Personnage; var listePer,listeMagasin:Inventaire);
    var
      nChoix:Integer;
@@ -56,9 +62,10 @@ implementation
        begin
             writeln('Vous n''avez pas l''argent necessaire.');
        end;
-   end;
+     end;
    end;
 
+  //Procédure qui lance les ventes dans le magasin
   procedure vente(var p:Personnage; var listePer,listeMagasin:Inventaire);
   var
      nChoix:Integer;
@@ -68,8 +75,8 @@ implementation
      afficheInventaire(listePer);
      sortie := False;
      writeln('1 - Vendre une epee pour 3 or ? Vous en avez ',listePer.possession[1]);
-     writeln('1 - Vendre un Bouclier pour 1 or ? Vous en avez ',listePer.possession[2]);
-     writeln('1 - Vendre une potion pour 3 or ? Vous en avez ',listePer.possession[3]);
+     writeln('2 - Vendre un Bouclier pour 1 or ? Vous en avez ',listePer.possession[2]);
+     writeln('3 - Vendre une potion pour 3 or ? Vous en avez ',listePer.possession[3]);
      while(sortie=false) do
      begin
          writeln;

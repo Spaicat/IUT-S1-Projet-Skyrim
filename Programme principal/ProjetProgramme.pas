@@ -457,3 +457,5 @@ begin
 readln;
 end.
 
+{ Merci d'avoir été attentif à notre travail <3 }
+

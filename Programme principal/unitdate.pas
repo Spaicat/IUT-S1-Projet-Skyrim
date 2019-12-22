@@ -4,6 +4,7 @@ interface
 
   uses SysUtils;
 
+//TYPES
   type
     jour =(Morndas,Tirdas,Middas,Turdas,Fredas,Loredas,Sundas);
     mois = (Primetoile,Clairciel,Semailles,Ondepluie,Plantaisons,Mi_lan,Hautzenith,Vifazur,Atrefeu,Soufflegivre,Sombreciel,Soiretoile);
@@ -21,6 +22,8 @@ interface
       m:mois;
       a:Integer;
     end;
+
+// FONCTIONS ET PROCEDURES
 
   //Procédure qui initialise la date (lorsqu'on lance le jeu)
   procedure initDate();

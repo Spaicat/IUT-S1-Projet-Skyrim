@@ -5,23 +5,20 @@ uses UnitMenu, UnitPersonnage, UnitMagasin, unitCombat, GestionEcran, unitLieu,u
 var
   scenario : Integer; //Variable qui definiera ou le joueur en est dans l'histoire
   posTemp, //Variable qui définit la position du joueur
-  anciennePosition : TInformation;
+  anciennePosition : TInformation; //Variable qui stoke l'ancienne position du joueur
   dragonFeu,
-  persoTemp : Personnage;
-  fuite : Boolean;
+  persoTemp : Personnage; //Variable qui définie les caracteristique et nom et la race du personnage
+  fuite : Boolean; //Variable boolenne qui definie si le joueur a fuit d'un combat
 
-  nChoix : Integer;
+  nChoix : Integer; //Variable de choix du joueur
 
-  o1,
-  o2,
-  o3 : Objet;
-  inventairePerso,
-  inventaireMagasin : Inventaire;
+  o1,         //Objet 1 //Epee
+  o2,         //Objet 2 //Bouclier
+  o3 : Objet; //Objet 3 //Potion
+  inventairePerso,                 //Inventaire du personnage
+  inventaireMagasin : Inventaire;  //Inventaire du magasin
   indicateur : Integer; //Variable qui indique si le joueur a un objet equiper ou non
-  nomEquipement : String;
-
-
-//until (position.nom = Blancherive) OR (position.nom = Marche_De_Blancherive) OR (position.nom = Porte_De_Blancherive) OR (position.nom = Chateau_De_Blancherive);
+  nomEquipement : String; //Nom de l'objet equiper par le joueur
 
 begin
   changerTailleConsole(200,60);
@@ -287,9 +284,6 @@ begin
 
     end;  // Fin du case
     end;  // Fin du while scenario = 2
-
-
-
 
 readln;
 end.

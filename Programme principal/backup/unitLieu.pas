@@ -144,7 +144,7 @@ implementation
   //Procedure qui permet de se déplacer de lieux en lieux
   procedure deplacement();
   var
-    choix:Integer;//Variable qui stoke le choix de l'utilisateur
+    choix:Integer; //Variable qui stoke le choix de l'utilisateur
 
   begin
     choix := afficheLieuxPossibles();
