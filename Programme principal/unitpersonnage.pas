@@ -48,9 +48,8 @@ implementation
   procedure createCharacter();
   var
     repUtilisateur : Integer; //Reponse saisis par l'utilisateur
-    repUtilisateurChar : String;
-    coordOrigin : coordonnees;
-    listeTexte : array of String;
+    coordOrigin : coordonnees; //Coordonnées des différents texte affiché
+    listeTexte : array of String; //Tableau contenant les noms et descriptif de chaque race
   begin
     repeat
       redo();

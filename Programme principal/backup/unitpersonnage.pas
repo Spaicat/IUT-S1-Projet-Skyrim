@@ -48,9 +48,8 @@ implementation
   procedure createCharacter();
   var
     repUtilisateur : Integer; //Reponse saisis par l'utilisateur
-    repUtilisateurChar : String;
-    coordOrigin : coordonnees;
-    listeTexte : array of String;
+    coordOrigin : coordonnees; //Coordonnées des différents texte affiché
+    listeTexte : array of String; //
   begin
     repeat
       redo();
@@ -89,7 +88,7 @@ implementation
       case repUtilisateur of //Attribution numéro pour les stats
          1:
          begin
-         persoChoose.argent := 100;
+         persoChoose.argent := 50;
          persoChoose.pv := 100;
          persoChoose.pvMax := 100;
          persoChoose.attaque := 20;
@@ -97,7 +96,7 @@ implementation
          end;
          2:
          begin
-         persoChoose.argent := 20;
+         persoChoose.argent := 10;
          persoChoose.pv := 75;
          persoChoose.pvMax := 75;
          persoChoose.attaque := 25;
@@ -105,7 +104,7 @@ implementation
          end;
          3:
          begin
-         persoChoose.argent := 20;
+         persoChoose.argent := 10;
          persoChoose.pv := 120;
          persoChoose.pvMax := 120;
          persoChoose.attaque := 15;
@@ -113,7 +112,7 @@ implementation
          end;
          4:
          begin
-         persoChoose.argent := 200;
+         persoChoose.argent := 100;
          persoChoose.pv := 95;
          persoChoose.pvMax := 95;
          persoChoose.attaque := 15;

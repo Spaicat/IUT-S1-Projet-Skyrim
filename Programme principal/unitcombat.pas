@@ -28,9 +28,8 @@ implementation
 uses UnitMenu, unitLieu;
 
 function Illyar():Personnage;
-
 var
-   monstre : Personnage;
+   monstre : Personnage; //Monstre correspondant à la fonction
 
 begin
      monstre.pseudo:= 'Illyar';         //On définit les differente statsitique des ennemies
@@ -42,9 +41,8 @@ begin
 end;
 
 function Qjard():Personnage;
-
 var
-   monstre : Personnage;
+   monstre : Personnage; //Monstre correspondant à la fonction
 
 begin
      monstre.pseudo := 'Qjard';         //On définit les differente statsitique des ennemies
@@ -56,9 +54,8 @@ begin
 end;
 
 function Ksiorn():Personnage;
-
 var
-   monstre : Personnage;
+   monstre : Personnage; //Monstre correspondant à la fonction
 
 begin
      monstre.pseudo := 'Ksiorn';            //On définit les differente statsitique des ennemies
@@ -70,7 +67,7 @@ begin
 end;
 function Ivrogne():Personnage;
 var
-   monstre : Personnage;
+   monstre : Personnage; //Monstre correspondant à la fonction
 begin
    monstre.pseudo := 'L''Ivrogne';          //On définit les differente statsitique des ennemies
    monstre.pv := 75;
@@ -83,7 +80,6 @@ end;
 
 //Procedure gérant tous les combats
 procedure combat(var perso,monstre: personnage;var inventairePerso : Inventaire;var fuite : Boolean);
-
 var
    sortie: Boolean;     //Variable de sortie de boucle
    choix: Integer;      //Variable qui definie les choix du joueur

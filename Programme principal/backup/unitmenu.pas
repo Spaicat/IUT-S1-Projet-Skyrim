@@ -156,7 +156,7 @@ end;
 //Procédure pour afficher l'interface du jeu
 procedure InterfaceInGame();
 var
-  posTemp,
+  posTemp, //Position initial de la ligne de séparation entre l'interface (en haut) et le menu (à gauche)
   posInterface, //Position du contenu de l'interface
   posCadre1 : coordonnees; //Position du coin haut gauche
   i : Integer; //Variable de boucle
@@ -294,10 +294,10 @@ end;
 //Efface l'écran et reconstitue le cadre
 procedure redo();
 var
-  coorC,
-  coorC2 : coordonnees;
-  largeur,
-  hauteur : Integer;
+  coorC, //Coordonnées du coin du cadre supérieur gauche
+  coorC2 : coordonnees; //Coordonnées du coin du cadre inférieur droit
+  largeur, //Largeur de l'écran
+  hauteur : Integer; //Hauteur de l'écran
 begin
   largeur := 200;
   hauteur := 60;
@@ -315,8 +315,8 @@ end;
 //Procédure qui permet d'afficher un menu à partir d'une liste de texte (par exemple pour le menu initial)
 procedure afficherListeMenu(ListeTexte : array of String; coordMenuInitial : coordonnees; distanceEntreTexte : Integer);
 var
-  i : Integer;
-  coordTemp : coordonnees;
+  i : Integer; //Variable de la boucle
+  coordTemp : coordonnees; //Coordonnées de chaque texte
 begin
   coordTemp.x := coordMenuInitial.x;
   coordTemp.y := coordMenuInitial.y;
@@ -330,10 +330,10 @@ end;
 //Affiche une selection pour un menu (Pour l'esthetique du choix et pour savoir quel choix est selectionné)
 function selectionMenu(coordMin : coordonnees; nbText, distanceEntreTexte, distanceDuFond, couleurFondTexte, couleurTexte : Integer) : Integer;
 var
-  coordTemp,
-  coordMax : coordonnees;
-  selectedChoice : Integer;
-  Touche : TKeyEvent;
+  coordTemp, //Variable de travail qui coorespond aux coordonnées de chaque ligne
+  coordMax : coordonnees; //Coordonnées du premier choix
+  selectedChoice : Integer; //Choix selectionné par l'utilisateur
+  Touche : TKeyEvent; //Touche tapé par l'utilisateur
 begin
   deplacerCurseur(CoordMin);
   coordTemp.x := coordMin.x;
@@ -343,7 +343,7 @@ begin
   coordMax.x := coordMin.x;
   repeat
     Touche := Key();
-    if (KeyEventToString(Touche)='Up') then
+    if (KeyEventToString(Touche)='Up') then //On teste si la touche pressée est la flêche du haut
        if coordTemp.y = coordMin.y then
           begin
           ColorierZone(0, 15, coordTemp.x, coordTemp.x+distanceDuFond, coordTemp.y);
@@ -358,7 +358,7 @@ begin
           deplacerCurseur(coordTemp);
           ColorierZone(couleurFondTexte, couleurTexte, coordTemp.x, coordTemp.x+distanceDuFond, coordTemp.y);
           end
-    else if (KeyEventToString(Touche)='Down') then
+    else if (KeyEventToString(Touche)='Down') then //On teste si la touche pressée est la flêche du bas
        if coordTemp.y = coordMax.y then
           begin
           ColorierZone(0, 15, coordTemp.x, coordTemp.x+distanceDuFond, coordTemp.y);
@@ -375,7 +375,7 @@ begin
           end;
 
   until (KeyEventToString(Touche)=chr(13));
-  selectedChoice := (coordTemp.y - CoordMin.y) div distanceEntreTexte;
+  selectedChoice := (coordTemp.y - CoordMin.y) div distanceEntreTexte; //On fait correspondre le choix effectué en calculant
   deplacerCurseur(coordMax);
   selectionMenu:=selectedChoice;
 end;
@@ -383,14 +383,14 @@ end;
 //Affiche une selection pour un menu (Pour l'esthetique du choix et pour savoir quel choix est selectionné) et en plus affiche le menu du jeu (Quêtes, Inventaire ...) (suivant le même fonctionnement)
 function selectionMenuEtInterface(coordMin : coordonnees; nbText, distanceEntreTexte, distanceDuFond, couleurFondTexte, couleurTexte : Integer) : Integer;
 var
-  coordTempInterface,
-  coordMinInterface,
-  coordMaxInterface,
-  coordTemp,
-  coordMax : coordonnees;
-  menuSelectionne,
-  selectedChoice : Integer;
-  Touche : TKeyEvent;
+  coordTempInterface, //Variable de travail qui coorespond aux coordonnées de chaque ligne de l'interface (le menu à gauche)
+  coordMinInterface, //Coordonnées du premier choix de l'interface (le menu à gauche)
+  coordMaxInterface, //Coordonnées du dernier choix de l'interface (le menu à gauche)
+  coordTemp, //Variable de travail qui coorespond aux coordonnées de chaque ligne
+  coordMax : coordonnees; //Coordonnées du premier choix
+  menuSelectionne, //Entier correspondant au menu séléctionné (à gauche ou à droite)
+  selectedChoice : Integer; //Choix selectionné par l'utilisateur
+  Touche : TKeyEvent; //Touche tapé par l'utilisateur
 begin
   deplacerCurseur(CoordMin);
   coordTemp.x := coordMin.x;
@@ -503,8 +503,8 @@ end;
 //Procédure pour écrire un texte sur une largeur donnée (justifié)
 procedure ecrireTexte(posCoord : coordonnees; textToWrite : String; largeur : Integer);
 var
-  tempText : String;
-  tempPosCoord : coordonnees;
+  tempText : String; //Variable de travail qui contient le texte à écrire moins celui qui à déjà été écrit
+  tempPosCoord : coordonnees; //Coordonnées de chaque ligne
 begin
   tempPosCoord.y := posCoord.y - 1;
   tempPosCoord.x := posCoord.x;
@@ -527,6 +527,7 @@ procedure writelnPerso();
 begin
   deplacerCurseurXY(positionCurseur.x, positionCurseur.y+1);
 end;
+
 //Fonction writeln mais saute d'abord une ligne et marche avec des coordonnées non fixe
 procedure writelnPerso(ligneAEcrire : String);
 var
@@ -537,20 +538,22 @@ begin
   write(ligneAEcrire);
   deplacerCurseurXY(posTemp, positionCurseur.y);
 end;
+
 //Fonction readln qui marche avec des coordonnées non fixe (juste pour sauter une ligne)
 procedure readlnPerso();
 var
-  posTemp : coordonnees;
+  posTemp : coordonnees; //Coordonnées de la position initial de là où on se situe (avant de faire une manipulation)
 begin
   posTemp := positionCurseur;
   deplacerCurseurXY(positionCurseur.x, positionCurseur.y+1);
   readln();
   deplacerCurseur(posTemp);
 end;
+
 //Fonction readln mais saute d'abord une ligne et marche avec des coordonnées non fixe (pour une chaine de caractères)
 procedure readlnPerso(var ligneAEnregistrer : String);
 var
-  posTemp : coordonnees;
+  posTemp : coordonnees; //Coordonnées de la position initial de là où on se situe (avant de faire une manipulation)
 begin
   posTemp.x := positionCurseur.x;
   posTemp.y := positionCurseur.y+1;
@@ -558,10 +561,11 @@ begin
   read(ligneAEnregistrer);
   deplacerCurseur(posTemp);
 end;
+
 //Fonction readln mais saute d'abord une ligne et marche avec des coordonnées non fixe (pour un entier)
 procedure readlnPerso(var ligneAEnregistrer : Integer);
 var
-  posTemp : coordonnees;
+  posTemp : coordonnees; //Coordonnées de la position initial de là où on se situe (avant de faire une manipulation)
 begin
   posTemp.x := positionCurseur.x;
   posTemp.y := positionCurseur.y+1;
@@ -569,10 +573,11 @@ begin
   read(ligneAEnregistrer);
   deplacerCurseur(posTemp);
 end;
+
 //Renvoie une coordonnée située en x et y
 function posXY(x, y : Integer) : coordonnees;
 var
-  coordTemp : coordonnees;
+  coordTemp : coordonnees; //Coordonnées renvoyé par la fonction
 begin
   coordTemp.x := x;
   coordTemp.y := y;

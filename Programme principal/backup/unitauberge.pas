@@ -1,7 +1,5 @@
 unit unitAuberge;
 
-
-
 interface
 uses GestionEcran, unitPersonnage, UnitMenu, unitLieu, SysUtils, unitDate;
 
@@ -13,11 +11,10 @@ implementation
 
 procedure LancerAuberge(var perso : personnage);
 var
-  coorTexte : Coordonnees;
-  coorTexte2 : Coordonnees;
-  temp : Integer;
-  d:dateCourante;
-  i:Integer;
+  coorTexte : Coordonnees; //Coordonnées du texte Se Reposer
+  coorTexte2 : Coordonnees; //Coordonnées du texte Partir
+  temp : Integer; //Choix de l'utilsateur (Se reposer ou partir)
+  d:dateCourante; //Date actuel
 
 begin
   coorTexte := positionCurseur();

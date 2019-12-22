@@ -24,22 +24,27 @@ interface
 
   // FONCTIONS ET PROCEDURES
 
-  //Procedure qui definie l'inventaire
-  procedure initInventaire(var liste:Inventaire; var o1,o2,o3:Objet);
   //Procedure qui definie les objets
   procedure initObjet(var o1,o2,o3:Objet);
+
+  //Procedure qui definie l'inventaire
+  procedure initInventaire(var liste:Inventaire; var o1,o2,o3:Objet);
+
   //Procedure qui affiche les objets
   procedure afficheObjet(var o:Objet);
+
   //Procedure qui affiche l'inventaire
   procedure afficheInventaire(var liste:Inventaire);
+
   //Procedure qui permet d'equiper des objets
   procedure equipement(var perso : Personnage;var inventairePerso : Inventaire; var indicateur : Integer; var nomEquipement : String);
 
 implementation
-uses UnitMenu;
+   uses UnitMenu;
 
-  procedure initObjet(var o1,o2,o3:Objet);
-  begin
+   //Procedure qui definie les objets
+   procedure initObjet(var o1,o2,o3:Objet);
+   begin
       o1.nom:='Epee';
       o1.valeur:=5;
       o1.cate:=Degats;
@@ -54,12 +59,11 @@ uses UnitMenu;
       o3.valeur:=5;
       o3.cate:=Soin;
       o3.action:=30;
-  end;
+   end;
 
-
-  procedure initInventaire(var liste:Inventaire; var o1,o2,o3:Objet);
-
-  begin
+   //Procedure qui definie l'inventaire
+   procedure initInventaire(var liste:Inventaire; var o1,o2,o3:Objet);
+   begin
       liste.listeObjets[1]:=o1;
       liste.listeObjets[2]:=o2;
       liste.listeObjets[3]:=o3;
@@ -67,11 +71,12 @@ uses UnitMenu;
       liste.possession[1]:=1;
       liste.possession[2]:=0;
       liste.possession[3]:=0;
-  end;
+   end;
 
+   //Procedure qui affiche les objets
    procedure afficheObjet(var o:Objet);
    var
-       coorTemp : coordonnees;
+       coorTemp : coordonnees; //Coordonnées de la position initial
    begin
        coorTemp := positionCurseur();
 
@@ -83,15 +88,12 @@ uses UnitMenu;
        writelnPerso('Valeur : ' + IntToStr(o.valeur) + ' or');
        writelnPerso(GetEnumName(TypeInfo(categorie), Ord(o.cate)) + ' : ' + IntToStr(o.action));
        deplacerCurseur(posXY(coorTemp.x, coorTemp.y+5));
-
-       //writelnPerso(o.nom + ' : ' + IntToStr(o.valeur) + ' or   ');
-       //writelnPerso(GetEnumName(TypeInfo(categorie), Ord(o.cate)) + ' : ' + IntToStr(o.action));
    end;
 
-
+   //Procedure qui affiche l'inventaire
    procedure afficheInventaire(var liste:Inventaire);
    var
-     i:Integer;
+     i:Integer; //Variable de la boucle
      textTemp : String; //Variable qui contient la quantité à afficher dans le cadre correspondant
    begin
      for i:=1 to length(liste.listeObjets) DO
@@ -107,11 +109,12 @@ uses UnitMenu;
      end;
    end;
 
+   //Procedure qui permet d'equiper des objets
    procedure equipement(var perso : Personnage; var inventairePerso : Inventaire; var indicateur : Integer; var nomEquipement : String);
    var
-     option : Integer;
-     sortie : Boolean;
-     coorTemp : coordonnees;
+     option : Integer; //Choix fait par l'utilisateur
+     sortie : Boolean; //Variable de la boucle
+     coorTemp : coordonnees; //Coordonnées de la position initial
    begin
      sortie := False;
      coorTemp := positionCurseur();

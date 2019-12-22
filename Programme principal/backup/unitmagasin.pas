@@ -155,8 +155,8 @@ uses UnitMenu;
   var
      nbADeviner, //Entier correspondant au nombre à deviner pour avoir la remise
      nbEssais, //Entier correspondant au nombre d'essais effectué par l'utilisateur
-     nb : Integer;
-     sortie : boolean;
+     nb : Integer; //Entier correspondant au nombre tapé par l'utilisateur
+     sortie : boolean; //Variable de la boucle
   begin
      sortie:=false;
      nbEssais:=0;

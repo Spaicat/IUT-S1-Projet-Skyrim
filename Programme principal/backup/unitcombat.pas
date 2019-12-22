@@ -28,9 +28,8 @@ implementation
 uses UnitMenu, unitLieu;
 
 function Illyar():Personnage;
-
 var
-   monstre : Personnage;
+   monstre : Personnage; //Monstre correspondant à la fonction
 
 begin
      monstre.pseudo:= 'Illyar';         //On définit les differente statsitique des ennemies
@@ -42,9 +41,8 @@ begin
 end;
 
 function Qjard():Personnage;
-
 var
-   monstre : Personnage;
+   monstre : Personnage; //Monstre correspondant à la fonction
 
 begin
      monstre.pseudo := 'Qjard';         //On définit les differente statsitique des ennemies
@@ -56,9 +54,8 @@ begin
 end;
 
 function Ksiorn():Personnage;
-
 var
-   monstre : Personnage;
+   monstre : Personnage; //Monstre correspondant à la fonction
 
 begin
      monstre.pseudo := 'Ksiorn';            //On définit les differente statsitique des ennemies
@@ -70,7 +67,7 @@ begin
 end;
 function Ivrogne():Personnage;
 var
-   monstre : Personnage;
+   monstre : Personnage; //Monstre correspondant à la fonction
 begin
    monstre.pseudo := 'L''Ivrogne';          //On définit les differente statsitique des ennemies
    monstre.pv := 75;
@@ -91,7 +88,7 @@ var
    rng : Integer;        //Variable qui stokera une valeur aleatoire
    effet : Integer;     //Variable qui définie l'effet du personnage //0 = rien //1 = étourdissement
    effetDuree : Integer;  //Variable qui compte la duree de l'effet
-   asciiText,
+   asciiText, //Variable qui contient l'ascii art à afficher quand on est mort
    textTemp : String; //Variable qui contient le texte à afficher dans les cadres
    coorTemp : coordonnees; //Variable qui contient l'emplacement (en haut à gauche) des cadres
 

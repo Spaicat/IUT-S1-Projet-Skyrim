@@ -15,7 +15,7 @@ var
   fin : Boolean;         //Variable boolenne qui sert de condition a la boucle principale
   lieuBourg : TInformation;   //Position du lieu 1
 
-  nChoix : Integer;      //Vraiable de choix du joueur
+  nChoix : Integer;      //Variable de choix du joueur
 
   o1,                    //Objet 1 //Epee
   o2,                    //Objet 2 //Bouclier
